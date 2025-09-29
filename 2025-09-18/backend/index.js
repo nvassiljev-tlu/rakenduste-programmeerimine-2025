@@ -46,3 +46,28 @@ app.get('/flights/:from-:to', (req, res) => {
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);
 });
+
+console.error('See on error!');
+console.warn('See on hoiatus!');
+console.info('See on info!');
+
+console.table([
+  { nimi: 'Mari', vanus: 20 },
+  { nimi: 'Jüri', vanus: 25 }
+]);
+
+console.time('aeg');
+setTimeout(() => {
+  console.timeEnd('aeg');
+
+  console.assert(1 === 2, 'Väide on vale!');
+
+  console.group('Minu grupp');
+  console.log('Esimene');
+  console.log('Teine');
+  console.groupEnd();
+
+  console.count('loendur');
+  console.count('loendur');
+  console.count('teine');
+}, 100);
